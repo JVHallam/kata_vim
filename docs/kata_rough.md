@@ -23,7 +23,6 @@
 
 # Cexpr:
 * copen
-* 
 
 # File Browsing
 * Acceptance:
@@ -63,3 +62,53 @@
     * t - open the file in a new tab
     * f1 to get the help screen
     * Ntree "directory" - Will CD you into a directory
+
+# File browsing and vimscript kata:
+## Create the file
+* Open the project at it's root
+    * cd project_root
+    * vim .
+
+* Create the practise_area/browsing directory
+    * d practise_area
+    * d browsing
+
+* Create the practise_area/browsing/test.vim file
+    * % test.vim
+    * Go back to :Ex
+
+* Open the file in a new tab
+    * t
+
+## Vimscript hello world, with a twist
+
+* Create an array : [ "Hello", "World" ]
+
+* Dump that to a file called "output.txt"
+    * call writefile( rotatedState, a:stateFilePath )
+
+* Read it back in
+    * contents = readfile( a:stateTemplatePath )
+
+* Echo it
+    * echo contents
+
+* Delete the file
+    * call delete( filepath )
+
+# Run that from powershell
+* This monster will allow you to run vimscript files from bash. I want it to show me the results in realtime though. That'd be nice.
+* Can i make vim silent, and pipe the output at the same time?
+
+* vim --cmd "redir! > output.txt" -S ".\test.vim" --not-a-term -c "q!" | Out-null; cat output.txt; 
+
+* This allows you to run vim as a cli interpretter, dropped straight into ex mode!"
+    * vim -i NONE -u NORC -U NONE -V1 -nNesS .\test.vim 
+
+* Add -c on the end to close it immediately
+    * vim -i NONE -u NORC -U NONE -V1 -nNesS .\test.vim -c "qa!"
+
+## Clean up
+* delete the file
+
+* delete the directory
