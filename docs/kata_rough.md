@@ -1,12 +1,32 @@
 # Tags:
 * Setup documentation
-* Create tags
-* Have an exercise for creating tags
-* Use tags to jump to parts of your documentation
-* Learn how tags work, then apply this shit
-* sessions
+* Tags:
+    * Create tags
+    * Have an exercise for creating tags
+    * Use tags to jump to parts of your documentation
+    * Learn how tags work, then apply this shit
+
+* sessions - Could be useful
+    * Sessions in general
+    * Re-opening closed files
+    * :mks at the root of a project
+    * vim -S Session.vim
+
+    * old files:
+        * v:oldfiles contains a list of all the recently used files
 
 * Nah fuck all that, play more with cexpr, cadde, copen and the keys that go with that
+
+* File management:
+    * Have a bunch of files in advance
+    * vimdiff with git merge
+    * Finding things /vimgrep/ and :find
+
+* Linting with copen, cadde, cexpr
+    * This is what i want tbh
+    * $errors=$(node -c .\test.js 2>&1 |select-string -pattern "C:\\").ToString()
+    * vim -c "cadde '$($errors):message"
+    * copen and hit enter, not really super exciting
 
 * I want some vimscript + file editing stuff in here too
 * Everything that can be turned into a vimrun exercise, should
@@ -34,10 +54,6 @@
     * I can do a multi file search and replace with consent
     * I can do a multi file search and replace without caring
 
-* Create directory
-* Creating files
-* Delete files
-* Delete directory
 * Rename files
 * Finding files
 
@@ -63,6 +79,11 @@
     * f1 to get the help screen
     * Ntree "directory" - Will CD you into a directory
 
+
+# I want recently opened files, buffers, copen, caddr 'n' shit
+
+
+------------------------ ------------------------ ------------------------ ------------------------ ------------------------ ------------------------
 # File browsing and vimscript kata:
 ## Create the file
 * Open the project at it's root
@@ -82,19 +103,19 @@
 
 ## Vimscript hello world, with a twist
 
-* Create an array : [ "Hello", "World" ]
+* Create a function that:
+    * Create an array : [ "Hello", "World" ]
+    * Dump that to a file called "output.txt"
+        * call writefile( rotatedState, a:stateFilePath )
 
-* Dump that to a file called "output.txt"
-    * call writefile( rotatedState, a:stateFilePath )
+* Call that function - Checking that the file is created
 
-* Read it back in
-    * contents = readfile( a:stateTemplatePath )
+## Vimscript hello world, again
 
-* Echo it
-    * echo contents
-
-* Delete the file
-    * call delete( filepath )
+* Create another function that:
+    * Reads the contents of that file back in
+    * Echos it
+    * Deletes the file
 
 # Run that from powershell
 * This monster will allow you to run vimscript files from bash. I want it to show me the results in realtime though. That'd be nice.
@@ -109,6 +130,6 @@
     * vim -i NONE -u NORC -U NONE -V1 -nNesS .\test.vim -c "qa!"
 
 ## Clean up
-* delete the file
-
-* delete the directory
+* Via netrw
+    * delete the file
+    * delete the directory
